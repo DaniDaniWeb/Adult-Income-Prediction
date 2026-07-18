@@ -53,11 +53,13 @@ random_state=42
 
 ### Cross-validation на training data
 
-| Model | Mean F1 | F1 std | Mean accuracy | Accuracy std |
+| Model | Mean accuracy | Mean precision | Mean recall | Mean F1 |
 | --- | ---: | ---: | ---: | ---: |
-| Dummy | 0.000 | 0.000 | 0.759 | 0.000 |
-| Random Forest | 0.662 | 0.013 | 0.848 | 0.004 |
-| XGBoost | 0.705 | 0.011 | 0.867 | 0.004 |
+| Dummy | 0.759 | 0.000 | 0.000 | 0.000 |
+| Random Forest | 0.848 | 0.712 | 0.619 | 0.662 |
+| XGBoost | 0.867 | 0.755 | 0.662 | 0.705 |
+
+Precision показывает, как часто прогноз `>50K` оказывается верным, а recall — какую долю людей с реальным доходом `>50K` находит модель.
 
 XGBoost показал лучший F1, поэтому именно его я обучил на всей training-части и один раз проверил на отложенном test set.
 
